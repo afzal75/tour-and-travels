@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import cors from 'cors';
 import express, { Application, NextFunction, Request, Response } from 'express';
+import { UserRoutes } from './routes/user.routes';
 // import globalErrorHandler from './app/middlewares/globalErrorHandlers';
 // import notFound from './app/middlewares/notFound';
 // import router from './app/routes';
@@ -18,7 +19,7 @@ app.use(cors({ origin: ['http://localhost:5173'] }));
 
 // application routes
 
-// app.use('/api/v1', router);
+app.use('/api/v1', UserRoutes);
 
 const getAController = (req: Request, res: Response) => {
     const a = 10;
